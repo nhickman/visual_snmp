@@ -31,11 +31,11 @@
             this.cmbOID = new System.Windows.Forms.ComboBox();
             this.txtIP = new System.Windows.Forms.TextBox();
             this.txtCommunity = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnGet = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtxOutput = new System.Windows.Forms.RichTextBox();
             this.cmbVersion = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -62,15 +62,14 @@
             this.txtCommunity.Size = new System.Drawing.Size(100, 20);
             this.txtCommunity.TabIndex = 2;
             // 
-            // button1
+            // btnGet
             // 
-            this.button1.Location = new System.Drawing.Point(716, 23);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Get";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGet.Location = new System.Drawing.Point(716, 23);
+            this.btnGet.Name = "btnGet";
+            this.btnGet.Size = new System.Drawing.Size(75, 23);
+            this.btnGet.TabIndex = 3;
+            this.btnGet.Text = "Get";
+            this.btnGet.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -89,7 +88,6 @@
             this.label2.Size = new System.Drawing.Size(58, 13);
             this.label2.TabIndex = 5;
             this.label2.Text = "Community";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -100,13 +98,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "OID";
             // 
-            // richTextBox1
+            // rtxOutput
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(12, 51);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(779, 232);
-            this.richTextBox1.TabIndex = 7;
-            this.richTextBox1.Text = "";
+            this.rtxOutput.Location = new System.Drawing.Point(12, 51);
+            this.rtxOutput.Name = "rtxOutput";
+            this.rtxOutput.Size = new System.Drawing.Size(779, 232);
+            this.rtxOutput.TabIndex = 7;
+            this.rtxOutput.Text = "";
             // 
             // cmbVersion
             // 
@@ -115,6 +113,7 @@
             this.cmbVersion.Name = "cmbVersion";
             this.cmbVersion.Size = new System.Drawing.Size(55, 21);
             this.cmbVersion.TabIndex = 8;
+            this.cmbVersion.SelectedIndexChanged += new System.EventHandler(this.cmbVersion_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -131,16 +130,17 @@
             this.ClientSize = new System.Drawing.Size(801, 295);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbVersion);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rtxOutput);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnGet);
             this.Controls.Add(this.txtCommunity);
             this.Controls.Add(this.txtIP);
             this.Controls.Add(this.cmbOID);
             this.Name = "frmMain";
             this.Text = "vSNMP";
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,11 +151,11 @@
         private System.Windows.Forms.ComboBox cmbOID;
         private System.Windows.Forms.TextBox txtIP;
         private System.Windows.Forms.TextBox txtCommunity;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnGet;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtxOutput;
         private System.Windows.Forms.ComboBox cmbVersion;
         private System.Windows.Forms.Label label4;
     }

@@ -14,16 +14,25 @@ namespace vSNMP
         public frmMain()
         {
             InitializeComponent();
+            
+            cmbVersion.Items.Add("v1");
+            cmbVersion.Items.Add("v2");
+            cmbVersion.Items.Add("v3");
+            cmbVersion.SelectedIndex = 1;
+            
+            txtIP.Text = "66.253.22.193";
+            txtCommunity.Text  = "public";
+
+            cmbOID.Items.Add("1.3.6.1.2.1.1.1.0");
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void frmMain_Load(object sender, EventArgs e)
         {
-
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void cmbVersion_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Console.Write(cmbVersion.SelectedItem);
         }
     }
 }
