@@ -70,6 +70,7 @@
             this.btnGet.TabIndex = 3;
             this.btnGet.Text = "Get";
             this.btnGet.UseVisualStyleBackColor = true;
+            this.btnGet.Click += new System.EventHandler(this.btnGet_Click);
             // 
             // label1
             // 
@@ -140,7 +141,6 @@
             this.Controls.Add(this.cmbOID);
             this.Name = "frmMain";
             this.Text = "vSNMP";
-            this.Load += new System.EventHandler(this.frmMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
